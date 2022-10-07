@@ -1,10 +1,11 @@
 <template>
     <div class="options_item">
         <ul>
-            <li v-for="option in options"> {{option.description}}
+            <li v-for="option in options"> 
+                {{option.description}}
                 <ul>
-                    <li v-for="class in option.class">
-                        <button v-on:click="returnClassSelected"> {{class}} </button>
+                    <li v-for="classe in option.class">
+                        <button v-on:click="returnClassSelected"> {{classe}} </button>
                     </li>
                 </ul>
             </li>
@@ -36,9 +37,7 @@
             }
         },
         methods : {
-            returnClassSelected (event) {
-                // return prop from element and add in potions
-            }
+
         }
     }
 

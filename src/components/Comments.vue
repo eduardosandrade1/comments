@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="comments">
         <input type="text" v-model="author_name" /><br>
         <textarea v-model="description"></textarea><br>
@@ -54,4 +54,4 @@
 
 <style scoped>
 
-</style>
+</style> -->
