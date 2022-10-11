@@ -1,9 +1,9 @@
 <template>
     <div class="item_commun_div">
         <div class="item_commun_item">
-            <OptionsItem />
+            <!-- <OptionsItem /> -->
             <div class="input_item_div">
-                <input name="" />
+                <input name="" placeholder="Type here" />
             </div>
         </div>
     </div>
@@ -35,5 +35,13 @@
 </script>
 
 <style scoped>
-
+    .input_item_div input{
+        font-size:  20pt;
+        width: 80%;
+        margin: 5px 2px;
+        outline:none;
+        box-shadow: none;
+        border: none;
+    }
+    
 </style>
