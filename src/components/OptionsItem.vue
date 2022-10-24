@@ -1,20 +1,10 @@
 <template>
-    <div class="options_item">
-        <ul>
-            <li v-for="option in options"> 
-                {{option.description}}
-                <ul>
-                    <li v-for="classe in option.class">
-                        <button v-on:click="returnClassSelected"> {{classe}} </button>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    
+   
 </template>
 
 <script>
-
+    import ItemTextVue from './ItemText.vue';
     export default {
         data () {
             return {
@@ -28,7 +18,7 @@
                         ],    
                     },
                     {
-                        description: '',
+                        description: '22',
                         class: [
                             ''
                         ],
@@ -38,6 +28,9 @@
         },
         methods : {
 
+        },
+        components: {
+            ItemTextVue,
         }
     }
 
