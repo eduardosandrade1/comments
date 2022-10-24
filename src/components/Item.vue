@@ -1,27 +1,27 @@
 <template>
     <div class="item_commun_div">
         <div class="item_commun_item">
-            <!-- <OptionsItem /> -->
-            <div class="input_item_div">
-                <input name="" placeholder="Type here" />
+            <div class="input_item_div" v-if="type.trim() == 'input'">
+                <input :value="value"  placeholder="Type here" />
+            </div>
+            <div class="input_item_div" v-if="type.trim() == 'banner'">
+                {{ type.trim() == 'banner' }}
+                <img alt="{{alt}}">
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import OptionsItem from './OptionsItem.vue';
 
     export default {
         name: "ItemText",
-        props: ['itemsCommun'],
+        props: ['itemsCommun', 'type', 'path', 'alt', 'value'],
+        type: '',
         data() {
             return {
-               
+                
             }
-        },
-        components: {
-            OptionsItem,
         },
         // methods: {
         //     addNewItem () {

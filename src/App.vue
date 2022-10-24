@@ -8,32 +8,13 @@
       </button>
     </div>
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <ItemText v-for="item in listItems" :itemsCommun="listItems"/>
-    <Modal v-bind:show="showModal" :inputs-props="inputsProps" :buttons-props="buttonsProps" />
+    <div class="teste">
+      <ItemText v-for="item in listItems" :value="item.value" :itemsCommun="listItems" :type="item.tag" :path="item.path" :alt="item.alt"/>
+    </div>
+    <!-- <Modal v-bind:show="showModal" :inputs-props="inputsProps" :buttons-props="buttonsProps" /> -->
 
     <div class="group-options-vue">
-      <div class="fab-wrapper">
-        <input id="fabCheckbox" type="checkbox" class="fab-checkbox" />
-        <label class="fab" for="fabCheckbox">
-            <span class="fab-dots fab-dots-1"></span>
-            <span class="fab-dots fab-dots-2"></span>
-            <span class="fab-dots fab-dots-3"></span>
-        </label>
-        <div class="fab-wheel">
-          <a class="fab-action fab-action-1" @click="additemsText">
-              T
-          </a>
-          <a class="fab-action fab-action-2">
-          <i class="fas fa-book"></i>
-          </a>
-              <a class="fab-action fab-action-3">
-          <i class="fas fa-address-book"></i>
-          </a>
-              <a class="fab-action fab-action-4">
-          <i class="fas fa-info"></i>
-          </a>
-        </div>
-      </div>
+      <OptionsItemVue />
     </div>
     
   </div>
@@ -41,8 +22,10 @@
 </template>
 
 <script>
-import ItemText from './components/ItemText.vue';
+
+import ItemText from './components/Item.vue';
 import Modal from './components/Modal.vue';
+import OptionsItemVue from './components/OptionsItem.vue';
 
 export default {
   name: 'App',
@@ -73,12 +56,17 @@ export default {
   components: {
     ItemText,
     Modal,
+    OptionsItemVue,
   },
   methods: {
-    additemsText() {
+    additem(type) {
       this.listItems.push({
         class_name: 'green',
-        input_value: 'teste'
+        input_value: 'teste',
+        path: '',
+        alt: '',
+        tag: type,
+        value: '12345'
       });
     },
     editColorBackground() {
@@ -175,7 +163,6 @@ export default {
     box-shadow: 0px 5px 20px #81a4f1;
     transition: all 0.3s ease;
     z-index: 1;
-    border: 1px solid #0c50a7;
     cursor: pointer;
   }
 

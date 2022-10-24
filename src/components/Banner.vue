@@ -1,5 +1,5 @@
 <template>
-    <img src="" alt="">
+    <img src="{{path}}" alt="{{alt}}">
 </template>
 
 <script>
